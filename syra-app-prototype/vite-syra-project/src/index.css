@@ -1,0 +1,114 @@
+@import 'tailwindcss';
+
+@layer base {
+  :root {
+    --background: 278 20% 97%;
+    --foreground: 270 10% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 270 10% 20%;
+    --primary: 270 76% 56%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 71% 72%;
+    --secondary-foreground: 270 10% 20%;
+    --muted: 278 15% 94%;
+    --muted-foreground: 270 5% 45%;
+    --accent: 280 64% 64%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 27 98% 57%;
+    --border: 278 10% 92%;
+    --input: 278 15% 96%;
+    --ring: 270 76% 56%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 270 15% 12%;
+    --foreground: 270 15% 98%;
+    --card: 270 13% 18%;
+    --card-foreground: 270 15% 98%;
+    --primary: 270 76% 56%;
+    --primary-foreground: 270 15% 12%;
+    --secondary: 270 71% 72%;
+    --secondary-foreground: 270 13% 18%;
+    --muted: 270 13% 28%;
+    --muted-foreground: 270 8% 65%;
+    --accent: 280 64% 64%;
+    --accent-foreground: 270 13% 18%;
+    --destructive: 27 98% 57%;
+    --border: 270 13% 25%;
+    --input: 270 13% 22%;
+    --ring: 270 76% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out;
+  }
+
+  .animate-slide-down {
+    animation: slide-down 0.5s ease-out;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+}
